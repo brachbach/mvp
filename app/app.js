@@ -1,4 +1,4 @@
-angular.module('farmSanctuary', [ui.router])
+angular.module('farmSanctuary', ['ui.router'])
 .config(function ($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/ateToday');
   $stateProvider
