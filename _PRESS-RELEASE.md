@@ -1,5 +1,5 @@
 # Project Name #
-
+Farm Sanctuary
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+Farm Sanctuary
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+People who are interested in eating less meat but find it tough get fun rewards and become part of a community of meat reducers.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+When you log in, you will be asked which of your meals so far that day met your meat-reduction goals. For each meal that met your goals, you will get VegBucks to purchase rescued farm animals for your farm sanctuary! Play with your animals and share them with friends (earn even more VegBucks for sharing)!
 
 ## Problem ##
-  > Describe the problem your product solves.
+Factory farming is inhumane, unhealthy for humans, and causes environmental damage. Many people realize this on some level and want to eat less meat, but they have a hard time changing their habits.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+By gamifying meat reduction, Farm Sanctuary makes eating less meat fun and social! Farm Sanctuary also presents farm animals as cute and friendly rather than as sources of meat, encouraging players to see them in a new light.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+"With Farm Sanctuary, grow your farm as you help real, live animals!"
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+"Just sign in with your Facebook account and get started right away with our preset meat reduction goals!"
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+"I used to eat tons of meat at every meal, but honestly it made me feel bad in both my stomach and my heart. With Farm Sanctuary, I've reduced my meat consumption to once per week, and I've had a ton of fun doing it!"
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+"Search for Farm Sanctuary on Facebook to start reducing your meta consumption and earning animals today!"
