@@ -11,14 +11,11 @@ var app = express();
 app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use('/api/meals', helpers.decode);
-
-app.get('/api/meals/', userController.getMeals);
-
-app.post('/api/meals/', function(req, res) { 
-  res.send({meals: 5, user: req.user});
-});
 
 app.post('/api/users/signup', userController.signup);
+
+app.use('/api/meals', helpers.decode);
+app.get('/api/meals/', userController.getMeals);
+app.post('/api/meals/', userController.addMeals);
 
 app.listen(1337);
