@@ -1,8 +1,5 @@
-console.log('loaded app.js');
-
 angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSanctuary.services'])
 .config(function ($stateProvider, $urlRouterProvider) {
-  console.log('configuring');
   $urlRouterProvider.otherwise('/ateToday');
   $stateProvider
     .state('ateToday', {
