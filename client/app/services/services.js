@@ -30,20 +30,30 @@ angular.module('farmSanctuary.services', [])
   };
 })
 .factory('Auth', function ($http) {
-  var username;
-  var signup = function(username) {
-    // console.log(username);
+  var signin = function (user) {
+    return $http({
+      method: 'POST',
+      url: '/api/users/signin',
+      data: user
+    })
+    .then(function (resp) {
+      return resp.data.token;
+    });
+  };
+
+  var signup = function (username) {
     return $http({
       method: 'POST',
       url: '/api/users/signup',
       data: {username: username}
     })
-    .then(function(resp) {
-      return resp;
+    .then(function (resp) {
+      return resp.data.token;
     });
   };
 
   return {
-    signup: signup
+    signup: signup,
+    signin: signin
   };
 });
