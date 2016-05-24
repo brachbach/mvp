@@ -19,7 +19,7 @@ angular.module('farmSanctuary.services', [])
       url: '/api/user/meals'
     })
     .then(function(resp) {
-      return resp.data.meals;
+      return resp.data.vegBucks;
     });
   };
 

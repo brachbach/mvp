@@ -27,15 +27,15 @@ module.exports = {
   getMeals: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {
-        console.log(user.meals);
-        res.json({meals: user.meals});
+        console.log(user.vegBucks);
+        res.json({vegBucks: user.vegBucks});
       })
   },
   addMeals: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {
         // console.log(user.meals);
-        user.meals = user.meals + req.body.meals;
+        user.vegBucks = user.vegBucks + req.body.meals;
         user.save(function(err, savedUser){
           res.send('Meals stored!');
         });

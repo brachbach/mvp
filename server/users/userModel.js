@@ -7,7 +7,7 @@ var UserSchema = new mongoose.Schema({
     unique: true 
   },
 
-  vegbucks: {
+  vegBucks: {
     type: Number,
     default: 10
   },

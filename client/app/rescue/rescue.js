@@ -10,7 +10,7 @@ angular.module('farmSanctuary.rescue', [])
   $scope.getVegBucks = function () {
     Meals.retrieveVegBucks()
       .then(function(vegBucks) {
-        $scope.VegBucks = vegBucks;
+        $scope.yourVegBucks = vegBucks;
       });
   };
 
