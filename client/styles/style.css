@@ -1,0 +1,11 @@
+body {
+  font-family: 'Architects Daughter', cursive;
+  background-image: url('/../app/assets/img_11162.jpg');
+  color: white;
+}
+
+button, form {
+  margin-top: 10px;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 15px;
+}
