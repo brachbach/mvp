@@ -4,9 +4,9 @@ angular.module('farmSanctuary.sanctuary', [])
   $scope.animals = {};
   User.getUser()
     .then(function(user) {
-      var cows = user.animals.cows;
-      var cowsArray = [];
-      for (var i = 0; i < cows; i++) {
+      const cows = user.animals.cows;
+      let cowsArray = [];
+      for (let i = 0; i < cows; i++) {
         cowsArray.push(i);
       }
       $scope.animals.cows = cowsArray;

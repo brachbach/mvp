@@ -26,12 +26,11 @@ module.exports = {
     });
   },
 
-  getMeals: function(req, res) {
+  getUser: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {
-        console.log(user.vegBucks);
-        res.json({vegBucks: user.vegBucks});
-      })
+          res.send(user);
+      });
   },
 
   addMeals: function(req, res) {
@@ -58,11 +57,4 @@ module.exports = {
         });
       });
   },
-
-  getAnimals: function(req, res) {
-    findUser({username: req.user.username})
-      .then(function(user) {
-          res.send(user);
-      });
-  }
 }

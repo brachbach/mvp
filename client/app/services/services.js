@@ -15,6 +15,7 @@ angular.module('farmSanctuary.services', [])
 
   var rescue = function(animal, fund, yourVegBucks) {
     if (fund <= yourVegBucks) {
+      console.log('sending rescue http request');
       return $http({
         method: 'POST',
         url: '/api/user/animals',
@@ -38,7 +39,7 @@ angular.module('farmSanctuary.services', [])
   this.getUser = () => {
     return $http({
       method: 'GET',
-      url: '/api/user/animals'
+      url: '/api/user'
     })
     .then(function(resp) {
       return resp.data;
