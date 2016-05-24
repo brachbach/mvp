@@ -1,6 +1,6 @@
 angular.module('farmSanctuary.rescue', [])
 
-.controller('rescueController', function ($scope, $location, Meals, Auth) { //$location
+.controller('rescueController', function ($scope, $location, Meals, Auth, User) { //$location
   $scope.yourVegBucks = 0;
 
   $scope.animalFunds = {
@@ -8,9 +8,9 @@ angular.module('farmSanctuary.rescue', [])
   };
 
   $scope.getVegBucks = () => {
-    Meals.retrieveVegBucks()
-      .then((vegBucks) => {
-        $scope.yourVegBucks = vegBucks;
+    User.getUser()
+      .then((user) => {
+        $scope.yourVegBucks = user.vegBucks;
       });
   };
 

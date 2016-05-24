@@ -13,16 +13,6 @@ angular.module('farmSanctuary.services', [])
     });
   };
 
-  var retrieveVegBucks = function () {
-    return $http({
-      method: 'GET',
-      url: '/api/user/meals'
-    })
-    .then(function(resp) {
-      return resp.data.vegBucks;
-    });
-  };
-
   var rescue = function(animal, fund, yourVegBucks) {
     if (fund <= yourVegBucks) {
       return $http({
@@ -39,22 +29,9 @@ angular.module('farmSanctuary.services', [])
     }
   };
 
-  var getAnimals = function() {
-    return $http({
-      method: 'GET',
-      url: '/api/user/animals'
-    })
-    .then(function(resp) {
-      console.log(resp.data);
-      return resp.data;
-    });
-  }
-
   return {
     submitMeals: submitMeals,
-    retrieveVegBucks: retrieveVegBucks,
     rescue: rescue,
-    getAnimals: getAnimals
   };
 })
 .service('User', function($http) {
