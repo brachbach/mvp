@@ -1,6 +1,6 @@
 angular.module('farmSanctuary.services', [])
 
-.factory('Meals', function () {
+.factory('Meals', function ($http) {
   var meals = [];
   var submitMeals = function (mealCount) {
     for (var i = 0; i < mealCount; i++) {
@@ -8,7 +8,14 @@ angular.module('farmSanctuary.services', [])
     }
   }
   var retrieveMeals = function () {
-    return meals;
+    return $http({
+      method: 'GET',
+      url: '/api/meals',
+    })
+    .then(function(resp) {
+      console.log(resp.data.meals);
+      return resp.data.meals;
+    });
   };
   return {
     submitMeals: submitMeals,
