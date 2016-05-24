@@ -1,0 +1,17 @@
+{
+  "name": "2016-04-mvp",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Ben Rachbach <brachbach@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/brachbach/2016-04-mvp",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
