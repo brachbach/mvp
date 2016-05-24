@@ -1,6 +1,7 @@
 angular.module('farmSanctuary.services', [])
 
 .factory('Meals', function ($http) {
+  
   const submitMeals = (mealCount) => {
     return $http({
       method: 'POST',
@@ -32,8 +33,10 @@ angular.module('farmSanctuary.services', [])
     submitMeals: submitMeals,
     rescue: rescue,
   };
+
 })
 .service('User', function ($http) {
+  
   this.getUser = () => {
     return $http({
       method: 'GET',
@@ -43,8 +46,10 @@ angular.module('farmSanctuary.services', [])
       return resp.data;
     });
   }
+
 })
 .factory('Auth', function ($http) {
+  
   var signin = (username) => {
     return $http({
       method: 'POST',
@@ -71,4 +76,5 @@ angular.module('farmSanctuary.services', [])
     signup: signup,
     signin: signin
   };
+  
 });

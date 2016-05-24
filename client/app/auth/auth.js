@@ -2,6 +2,7 @@ angular.module('farmSanctuary.auth', [])
 
 .controller('authController', function ($scope, $location, $window, Auth) {
   $scope.user = {};
+  
   $scope.signup = () => {
     Auth.signup($scope.user.username)
       .then((token) => {
@@ -9,6 +10,7 @@ angular.module('farmSanctuary.auth', [])
         $location.path('/ateToday');
       });
   };
+  
   $scope.signin = () => {
     Auth.signin($scope.user.username)
       .then(function (token) {
@@ -16,10 +18,13 @@ angular.module('farmSanctuary.auth', [])
         $location.path('/ateToday');
       });
   };
+  
   $scope.goToSignup = () => {
     $location.path('signup');
-  }
+  };
+  
   $scope.goToSignin = () => {
     $location.path('signin');
-  }
+  };
+
 });
