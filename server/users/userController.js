@@ -17,6 +17,7 @@ module.exports = {
       res.json({token: token});
     });
   },
+
   signin: function(req, res) {
     findUser({username: req.body.username})
       .then (function(user) {
@@ -24,6 +25,7 @@ module.exports = {
         res.json({token: token});
     });
   },
+
   getMeals: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {
@@ -31,6 +33,7 @@ module.exports = {
         res.json({vegBucks: user.vegBucks});
       })
   },
+
   addMeals: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {
@@ -41,6 +44,7 @@ module.exports = {
         });
       });
   },
+
   rescueAnimal: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {
@@ -50,6 +54,13 @@ module.exports = {
         user.save(function(err, savedUser){
           res.send(savedUser);
         });
+      });
+  },
+
+  getAnimals: function(req, res) {
+    findUser({username: req.user.username})
+      .then(function(user) {
+          res.send(user);
       });
   }
 }

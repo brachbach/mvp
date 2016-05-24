@@ -1,14 +1,15 @@
 angular.module('farmSanctuary.sanctuary', [])
 
 .controller('sanctuaryController', function ($scope, $location, Meals, Auth) {
-  $scope.data = {};
-  Meals.retrieveMeals()
-    .then(function(meals) {
-      var mealsArray = [];
-      for (var i = 0; i < meals; i++) {
-        mealsArray.push(i);
+  $scope.animals = {};
+  Meals.getAnimals()
+    .then(function(user) {
+      var cows = user.animals.cows;
+      var cowsArray = [];
+      for (var i = 0; i < cows; i++) {
+        cowsArray.push(i);
       }
-      $scope.data.meals = mealsArray;
+      $scope.animals.cows = cowsArray;
     });
   $scope.goToAteToday = function() {
     $location.path('ateToday');

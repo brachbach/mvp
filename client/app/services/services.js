@@ -39,10 +39,22 @@ angular.module('farmSanctuary.services', [])
     }
   };
 
+  var getAnimals = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/user/animals'
+    })
+    .then(function(resp) {
+      console.log(resp.data);
+      return resp.data;
+    });
+  }
+
   return {
     submitMeals: submitMeals,
     retrieveVegBucks: retrieveVegBucks,
-    rescue: rescue
+    rescue: rescue,
+    getAnimals: getAnimals
   };
 })
 .factory('Auth', function ($http) {

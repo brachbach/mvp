@@ -16,8 +16,11 @@ app.post('/api/auth/signup', userController.signup);
 app.post('/api/auth/signin', userController.signin);
 
 app.use('/api/user', helpers.decode);
+
 app.get('/api/user/meals/', userController.getMeals);
 app.post('/api/user/meals/', userController.addMeals);
+
 app.post('/api/user/animals/', userController.rescueAnimal);
+app.get('/api/user/animals/', userController.getAnimals);
 
 app.listen(1337);
