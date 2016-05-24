@@ -7,12 +7,12 @@ angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSan
   $stateProvider
     .state('ateToday', {
       url: '/ateToday',
-      templateUrl: 'app/ateToday.html',
+      templateUrl: 'app/ateToday/ateToday.html',
       controller: 'ateTodayController'
     })
     .state('sanctuary', {
       url: '/sanctuary',
-      templateUrl: 'app/sanctuary.html',
+      templateUrl: 'app/sanctuary/sanctuary.html',
       controller: 'ateTodayController'
     });
 });
