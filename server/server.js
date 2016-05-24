@@ -18,5 +18,6 @@ app.post('/api/auth/signin', userController.signin);
 app.use('/api/user', helpers.decode);
 app.get('/api/user/meals/', userController.getMeals);
 app.post('/api/user/meals/', userController.addMeals);
+app.post('/api/user/animals/', userController.rescueAnimal);
 
 app.listen(1337);

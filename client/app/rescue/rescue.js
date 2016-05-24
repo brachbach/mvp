@@ -19,9 +19,10 @@ angular.module('farmSanctuary.rescue', [])
   };
 
   $scope.rescue = function(animal) {
+    console.log('rescue function called');
     Meals.rescue(animal, $scope.animalFunds[animal], $scope.yourVegBucks)   //using the local variable here introduces some dangers; should check it in the backend.
-      .then(function(vegBucks) {
-        $scope.VegBucks = vegBucks;
+      .then(function(data) {
+        $scope.yourVegBucks = data.vegBucks;
       });
   };
 

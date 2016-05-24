@@ -28,10 +28,13 @@ angular.module('farmSanctuary.services', [])
       return $http({
         method: 'POST',
         url: '/api/user/animals',
-        data: {animal: animal}
+        data: {
+          animal: animal,
+          fund: fund
+        }
       })
       .then(function(resp) {
-        submitMeals(-fund);
+        return resp.data;
       });
     }
   };

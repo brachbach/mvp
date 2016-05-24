@@ -40,5 +40,16 @@ module.exports = {
           res.send('Meals stored!');
         });
       });
+  },
+  rescueAnimal: function(req, res) {
+    findUser({username: req.user.username})
+      .then(function(user) {
+        // console.log(user.meals);
+        user.vegBucks = user.vegBucks - req.body.fund;
+        user.animals[req.body.animal]++;
+        user.save(function(err, savedUser){
+          res.send(savedUser);
+        });
+      });
   }
 }
