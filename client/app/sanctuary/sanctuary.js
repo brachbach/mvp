@@ -1,7 +1,6 @@
 angular.module('farmSanctuary.sanctuary', [])
 
-.controller('sanctuaryController', function ($scope, $location, Meals) { //$location
-  $scope.data = {};
+.controller('sanctuaryController', function ($scope, $location, Meals) {
   Meals.retrieveMeals()
     .then(function(meals) {
       var mealsArray = [];

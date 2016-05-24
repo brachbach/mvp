@@ -1,4 +1,4 @@
-angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSanctuary.services', 'farmSanctuary.sanctuary'])
+angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSanctuary.services', 'farmSanctuary.sanctuary', 'farmSanctuary.auth'])
 .config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/ateToday');
   $stateProvider
@@ -11,5 +11,10 @@ angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSan
       url: '/sanctuary',
       templateUrl: 'app/sanctuary/sanctuary.html',
       controller: 'sanctuaryController'
+    })    
+    .state('signup', {
+      url: '/signup',
+      templateUrl: 'app/auth/signup.html',
+      controller: 'authController'
     });
 });
