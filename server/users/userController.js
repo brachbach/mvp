@@ -1,58 +1,56 @@
-var User = require('./userModel.js');
-var Q = require('q');
-var jwt = require('jwt-simple');
+const User = require('./userModel.js');
+const Q = require('q');
+const jwt = require('jwt-simple');
 
-var createUser = Q.nbind(User.create, User);
-var findUser = Q.nbind(User.findOne, User);
+const createUser = Q.nbind(User.create, User);
+const findUser = Q.nbind(User.findOne, User);
 
 module.exports = {
-  signup: function(req, res) {
-    var username = req.body.username;
-    console.log('creating user');
+  signup: (req, res) => {
+    const username = req.body.username;
     return createUser({
       username: username
     })
-    .then (function(user) {
-      var token = jwt.encode(user, 'secret');
+    .then ((user) => {   //this might possibly be better as a redirect to sign in
+      const token = jwt.encode(user, 'secret');
       res.json({token: token});
     });
   },
 
-  signin: function(req, res) {
+  signin: (req, res) => {
     findUser({username: req.body.username})
-      .then (function(user) {
-        var token = jwt.encode(user, 'secret');
+      .then ((user) => {
+        const token = jwt.encode(user, 'secret');
         res.json({token: token});
     });
   },
 
-  getUser: function(req, res) {
+  getUser: (req, res) => {
     findUser({username: req.user.username})
-      .then(function(user) {
+      .then((user) => {
           res.send(user);
       });
   },
 
-  addMeals: function(req, res) {
+  addMeals: (req, res) => {
     findUser({username: req.user.username})
-      .then(function(user) {
+      .then((user) => {
         // console.log(user.meals);
         user.vegBucks = user.vegBucks + req.body.meals;
-        user.save(function(err, savedUser){
+        user.save((err, savedUser) => {
           res.send('Meals stored!');
         });
       });
   },
 
-  rescueAnimal: function(req, res) {
+  rescueAnimal: (req, res) => {
     findUser({username: req.user.username})
-      .then(function(user) {
-        // console.log(user.meals);
+      .then((user) => {
         user.vegBucks = user.vegBucks - req.body.fund;
         console.log(req.body.animal);
         console.log(user.animals[req.body.animal]);
         user.animals[req.body.animal]++;
-        user.save(function(err, savedUser){
+        user.save((err, savedUser) => {
           res.send(savedUser);
         });
       });
