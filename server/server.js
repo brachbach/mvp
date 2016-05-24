@@ -13,9 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use('/api/meals', helpers.decode);
 
-app.get('/api/meals/', function(req, res) {
-  res.send({meals: 5, user: req.user});
-});
+app.get('/api/meals/', userController.getMeals);
 
 app.post('/api/meals/', function(req, res) { 
   res.send({meals: 5, user: req.user});

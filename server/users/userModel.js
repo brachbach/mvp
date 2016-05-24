@@ -4,7 +4,7 @@ var UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
-    unique: true   //this is cool
+    unique: true 
   },
 
   meals: {
