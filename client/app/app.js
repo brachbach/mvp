@@ -1,4 +1,4 @@
-angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSanctuary.services', 'farmSanctuary.sanctuary', 'farmSanctuary.auth'])
+angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSanctuary.services', 'farmSanctuary.sanctuary', 'farmSanctuary.auth', 'farmSanctuary.rescue'])
 .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
   $urlRouterProvider.otherwise('/signin');
   $stateProvider
@@ -21,6 +21,11 @@ angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSan
       url: '/signin',
       templateUrl: 'app/auth/signin.html',
       controller: 'authController'
+    })
+    .state('rescue', {
+      url: '/rescue',
+      templateUrl: 'app/rescue/rescue.html',
+      controller: 'rescueController'
     });
   $httpProvider.interceptors.push('AttachTokens');
 })

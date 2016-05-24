@@ -5,7 +5,7 @@ angular.module('farmSanctuary.services', [])
   var submitMeals = function (mealCount) {
     return $http({
       method: 'POST',
-      url: '/api/meals',
+      url: '/api/user/meals',
       data: {meals: mealCount}
     })
     .then(function(resp) {
@@ -13,26 +13,40 @@ angular.module('farmSanctuary.services', [])
     });
   };
 
-  var retrieveMeals = function () {
+  var retrieveVegBucks = function () {
     return $http({
       method: 'GET',
-      url: '/api/meals'
+      url: '/api/user/meals'
     })
     .then(function(resp) {
       return resp.data.meals;
     });
   };
 
+  var rescue = function(animal, fund, yourVegBucks) {
+    if (fund <= yourVegBucks) {
+      return $http({
+        method: 'POST',
+        url: '/api/user/animals',
+        data: {animal: animal}
+      })
+      .then(function(resp) {
+        submitMeals(-fund);
+      });
+    }
+  };
+
   return {
     submitMeals: submitMeals,
-    retrieveMeals: retrieveMeals
+    retrieveVegBucks: retrieveVegBucks,
+    rescue: rescue
   };
 })
 .factory('Auth', function ($http) {
   var signin = function (username) {
     return $http({
       method: 'POST',
-      url: '/api/users/signin',
+      url: '/api/auth/signin',
       data: {username: username}
     })
     .then(function (resp) {
@@ -43,7 +57,7 @@ angular.module('farmSanctuary.services', [])
   var signup = function (username) {
     return $http({
       method: 'POST',
-      url: '/api/users/signup',
+      url: '/api/auth/signup',
       data: {username: username}
     })
     .then(function (resp) {

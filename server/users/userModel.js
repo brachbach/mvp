@@ -7,9 +7,16 @@ var UserSchema = new mongoose.Schema({
     unique: true 
   },
 
-  meals: {
+  vegbucks: {
     type: Number,
-    default: 0
+    default: 10
+  },
+
+  animals: {
+    cows: {
+      type: Number,
+      default: 0
+    }
   }
 });
 

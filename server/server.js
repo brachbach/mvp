@@ -12,11 +12,11 @@ app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.post('/api/users/signup', userController.signup);
-app.post('/api/users/signin', userController.signin);
+app.post('/api/auth/signup', userController.signup);
+app.post('/api/auth/signin', userController.signin);
 
-app.use('/api/meals', helpers.decode);
-app.get('/api/meals/', userController.getMeals);
-app.post('/api/meals/', userController.addMeals);
+app.use('/api/user', helpers.decode);
+app.get('/api/user/meals/', userController.getMeals);
+app.post('/api/user/meals/', userController.addMeals);
 
 app.listen(1337);
