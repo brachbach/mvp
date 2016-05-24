@@ -1,6 +1,6 @@
 angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSanctuary.services', 'farmSanctuary.sanctuary', 'farmSanctuary.auth'])
 .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
-  $urlRouterProvider.otherwise('/ateToday');
+  $urlRouterProvider.otherwise('/signin');
   $stateProvider
     .state('ateToday', {
       url: '/ateToday',

@@ -10,4 +10,7 @@ angular.module('farmSanctuary.sanctuary', [])
       }
       $scope.data.meals = mealsArray;
     });
+  $scope.goToAteToday = function() {
+    $location.path('ateToday');
+  };
 });
