@@ -50,6 +50,8 @@ module.exports = {
       .then(function(user) {
         // console.log(user.meals);
         user.vegBucks = user.vegBucks - req.body.fund;
+        console.log(req.body.animal);
+        console.log(user.animals[req.body.animal]);
         user.animals[req.body.animal]++;
         user.save(function(err, savedUser){
           res.send(savedUser);

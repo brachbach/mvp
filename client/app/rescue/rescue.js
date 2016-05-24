@@ -4,7 +4,7 @@ angular.module('farmSanctuary.rescue', [])
   $scope.yourVegBucks = 0;
 
   $scope.animalFunds = {
-    cow: 5
+    cows: 5
   };
 
   $scope.getVegBucks = function () {
