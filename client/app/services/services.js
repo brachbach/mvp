@@ -57,6 +57,17 @@ angular.module('farmSanctuary.services', [])
     getAnimals: getAnimals
   };
 })
+.service('User', function($http) {
+  this.getUser = () => {
+    return $http({
+      method: 'GET',
+      url: '/api/user/animals'
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  }
+})
 .factory('Auth', function ($http) {
   var signin = function (username) {
     return $http({
