@@ -2,24 +2,24 @@ angular.module('farmSanctuary.auth', [])
 
 .controller('authController', function ($scope, $location, $window, Auth) {
   $scope.user = {};
-  $scope.signup = function() {
+  $scope.signup = () => {
     Auth.signup($scope.user.username)
-      .then(function (token) {
+      .then((token) => {
         $window.localStorage.setItem('com.farmSanctuary', token);
         $location.path('/ateToday');
       });
   };
-  $scope.signin = function() {
+  $scope.signin = () => {
     Auth.signin($scope.user.username)
       .then(function (token) {
         $window.localStorage.setItem('com.farmSanctuary', token);
         $location.path('/ateToday');
       });
   };
-  $scope.goToSignup = function() {
+  $scope.goToSignup = () => {
     $location.path('signup');
   }
-  $scope.goToSignin = function() {
+  $scope.goToSignin = () => {
     $location.path('signin');
   }
 });

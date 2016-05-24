@@ -1,21 +1,19 @@
 angular.module('farmSanctuary.services', [])
 
 .factory('Meals', function ($http) {
-  // var meals = [];
-  var submitMeals = function (mealCount) {
+  const submitMeals = (mealCount) => {
     return $http({
       method: 'POST',
       url: '/api/user/meals',
       data: {meals: mealCount}
     })
-    .then(function(resp) {
+    .then((resp) => {
       return resp;
     });
   };
 
-  var rescue = function(animal, fund, yourVegBucks) {
+  const rescue = (animal, fund, yourVegBucks) => {
     if (fund <= yourVegBucks) {
-      console.log('sending rescue http request');
       return $http({
         method: 'POST',
         url: '/api/user/animals',
@@ -24,7 +22,7 @@ angular.module('farmSanctuary.services', [])
           fund: fund
         }
       })
-      .then(function(resp) {
+      .then((resp) => {
         return resp.data;
       });
     }
@@ -35,36 +33,36 @@ angular.module('farmSanctuary.services', [])
     rescue: rescue,
   };
 })
-.service('User', function($http) {
+.service('User', function ($http) {
   this.getUser = () => {
     return $http({
       method: 'GET',
       url: '/api/user'
     })
-    .then(function(resp) {
+    .then((resp) => {
       return resp.data;
     });
   }
 })
 .factory('Auth', function ($http) {
-  var signin = function (username) {
+  var signin = (username) => {
     return $http({
       method: 'POST',
       url: '/api/auth/signin',
       data: {username: username}
     })
-    .then(function (resp) {
+    .then((resp) => {
       return resp.data.token;
     });
   };
 
-  var signup = function (username) {
+  var signup = (username) => {
     return $http({
       method: 'POST',
       url: '/api/auth/signup',
       data: {username: username}
     })
-    .then(function (resp) {
+    .then((resp) => {
       return resp.data.token;
     });
   };

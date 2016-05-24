@@ -3,7 +3,7 @@ angular.module('farmSanctuary.sanctuary', [])
 .controller('sanctuaryController', function ($scope, $location, Meals, Auth, User) {
   $scope.animals = {};
   User.getUser()
-    .then(function(user) {
+    .then((user) => {
       const cows = user.animals.cows;
       let cowsArray = [];
       for (let i = 0; i < cows; i++) {
