@@ -7,8 +7,9 @@ module.exports = {
   signup: function(req, res) {
     // console.log(req.body);
     var username = req.body.username;
-    return createUser({
+    createUser({
       username: username
     });
+    res.send(username);
   }
 }
