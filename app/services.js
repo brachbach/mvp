@@ -1,12 +1,14 @@
 angular.module('farmSanctuary.services', [])
 
 .factory('Meals', function () {
-  var meals = 0;
+  var meals = [];
   var submitMeals = function (mealCount) {
-    this.meals = mealCount;
-  };
+    for (var i = 0; i < mealCount; i++) {
+      meals.push(i);
+    }
+  }
   var retrieveMeals = function () {
-    return this.meals;
+    return meals;
   };
   return {
     submitMeals: submitMeals,
