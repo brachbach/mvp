@@ -1,12 +1,12 @@
-var express = require ('express');
-var mongoose = require('mongoose');
-var userController = require('./users/userController.js')
-var bodyParser = require('body-parser');
-var helpers = require('./config/helpers.js');
+const express = require ('express');
+const mongoose = require('mongoose');
+const userController = require('./users/userController.js')
+const bodyParser = require('body-parser');
+const helpers = require('./config/helpers.js');
 
 mongoose.connect('mongodb://localhost/farmSanctuary');
 
-var app = express();
+const app = express();
 
 app.use(express.static(__dirname + '/../client'));
 app.use(bodyParser.urlencoded({extended: true}));
