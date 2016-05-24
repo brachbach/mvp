@@ -1,11 +1,16 @@
 angular.module('farmSanctuary.services', [])
 
 .factory('Meals', function ($http) {
-  var meals = [];
+  // var meals = [];
   var submitMeals = function (mealCount) {
-    for (var i = 0; i < mealCount; i++) {
-      meals.push(i);
-    }
+    return $http({
+      method: 'POST',
+      url: '/api/meals',
+      data: {meals: mealCount}
+    })
+    .then(function(resp) {
+      return resp;
+    });
   }
   var retrieveMeals = function () {
     return $http({
@@ -13,7 +18,7 @@ angular.module('farmSanctuary.services', [])
       url: '/api/meals',
     })
     .then(function(resp) {
-      console.log(resp.data.meals);
+      // console.log(resp.data.meals);
       return resp.data.meals;
     });
   };

@@ -11,4 +11,8 @@ app.get('/api/meals', function(req, res) {
   res.send({meals: 5});
 });
 
+app.post('/api/meals', function(req, res) {
+  res.send({meals: 5});
+});
+
 app.listen(1337);
