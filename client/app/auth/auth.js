@@ -16,4 +16,10 @@ angular.module('farmSanctuary.auth', [])
         $location.path('/ateToday');
       });
   };
+  $scope.goToSignup = function() {
+    $location.path('signup');
+  }
+  $scope.goToSignin = function() {
+    $location.path('signin');
+  }
 });
