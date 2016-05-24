@@ -9,4 +9,11 @@ angular.module('farmSanctuary.auth', [])
         $location.path('/ateToday');
       });
   };
+  $scope.signin = function() {
+    Auth.signin($scope.user.username)
+      .then(function (token) {
+        $window.localStorage.setItem('com.farmSanctuary', token);
+        $location.path('/ateToday');
+      });
+  };
 });

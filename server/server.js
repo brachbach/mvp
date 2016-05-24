@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.post('/api/users/signup', userController.signup);
+app.post('/api/users/signin', userController.signin);
 
 app.use('/api/meals', helpers.decode);
 app.get('/api/meals/', userController.getMeals);

@@ -17,6 +17,13 @@ module.exports = {
       res.json({token: token});
     });
   },
+  signin: function(req, res) {
+    findUser({username: req.body.username})
+      .then (function(user) {
+        var token = jwt.encode(user, 'secret');
+        res.json({token: token});
+    });
+  },
   getMeals: function(req, res) {
     findUser({username: req.user.username})
       .then(function(user) {

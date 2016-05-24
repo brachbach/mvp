@@ -19,7 +19,6 @@ angular.module('farmSanctuary.services', [])
       url: '/api/meals'
     })
     .then(function(resp) {
-      // console.log(resp.data.meals);
       return resp.data.meals;
     });
   };
@@ -30,11 +29,11 @@ angular.module('farmSanctuary.services', [])
   };
 })
 .factory('Auth', function ($http) {
-  var signin = function (user) {
+  var signin = function (username) {
     return $http({
       method: 'POST',
       url: '/api/users/signin',
-      data: user
+      data: {username: username}
     })
     .then(function (resp) {
       return resp.data.token;

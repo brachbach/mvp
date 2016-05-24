@@ -16,6 +16,11 @@ angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSan
       url: '/signup',
       templateUrl: 'app/auth/signup.html',
       controller: 'authController'
+    })
+    .state('signin', {
+      url: '/signin',
+      templateUrl: 'app/auth/signin.html',
+      controller: 'authController'
     });
   $httpProvider.interceptors.push('AttachTokens');
 })
@@ -26,10 +31,8 @@ angular.module('farmSanctuary', ['ui.router', 'farmSanctuary.ateToday', 'farmSan
   // then add it to the header so the server can validate the request
   var attach = {
     request: function (object) {
-      console.log('attempt to attach jwt');
       var jwt = $window.localStorage.getItem('com.farmSanctuary');
       if (jwt) {
-        console.log('jwt attached!');
         object.headers['x-access-token'] = jwt;
       }
       object.headers['Allow-Control-Allow-Origin'] = '*';
