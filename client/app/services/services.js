@@ -45,7 +45,7 @@ angular.module('farmSanctuary.services', [])
     .then((resp) => {
       return resp.data;
     });
-  }
+  };
 
 })
 .factory('Auth', function ($http) {

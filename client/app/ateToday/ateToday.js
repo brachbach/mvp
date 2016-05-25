@@ -13,5 +13,4 @@ angular.module('farmSanctuary.ateToday', [])
   $scope.goToSanctuary = () => {
     $location.path('/sanctuary');
   };
-
 });

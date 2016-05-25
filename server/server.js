@@ -1,6 +1,6 @@
 const express = require ('express');
 const mongoose = require('mongoose');
-const userController = require('./users/userController.js')
+const userController = require('./users/userController.js');
 const bodyParser = require('body-parser');
 const helpers = require('./config/helpers.js');
 
